@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Dancing+Script&display=swap');
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: #000;
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease;
+}
+
+body.light-mode {
+    background: #fff;
+}
+
+/* Navigation Styles */
+.navbar {
+    position: fixed;
+    width: 100%;
+    padding: 1.5rem 4rem;
+    z-index: 1000;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-section {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand {
+    color: #ffd700 !important;
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-right: 3rem;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.navbar-brand:hover {
+    opacity: 0.8;
+}
+
+.nav-link {
+    color: #fff !important;
+    font-weight: 300;
+    margin-right: 2rem;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ffd700 !important;
+}
+
+.light-mode .nav-link {
+    color: #000 !important;
+}
+
+.dark-mode-toggle {
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+    transform: scale(1.1);
+}
+
+.light-mode .dark-mode-toggle {
+    color: #000;
+}
+
+.mode-text {
+    color: #fff;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+}
+
+.light-mode .mode-text {
+    color: #000;
+}
+
+/* Content Styles */
+.content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.main-logo {
+    font-size: 154px;
+    color: #fff;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.light-mode .main-logo {
+    color: #000;
+}
+
+.tagline {
+    color: #fff;
+    font-size: 35px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.light-mode .tagline {
+    color: #000;
+}
+
+.coming-soon {
+    font-family: 'Dancing Script', cursive;
+    color: #fff;
+    font-size: 26px;
+    margin: 1rem 0 2rem;
+    transition: color 0.3s ease;
+}
+
+.light-mode .coming-soon {
+    color: #000;
+}
+
+/* Email Subscription Styles */
+.email-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+.email-input {
+    width: 100%;
+    padding: 0.8rem 120px 0.8rem 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 14px;
+    height: 55px;
+    transition: all 0.3s ease;
+}
+
+.email-input:focus {
+    outline: none;
+    border-color: #ffd700;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+}
+
+.light-mode .email-input {
+    background: rgba(0, 0, 0, 0.1);
+    color: #000;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.email-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s ease;
+}
+
+.light-mode .email-input::placeholder {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.subscribe-btn {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    padding: 0.6rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    background: rgba(255, 215, 0, 0.8);
+    color: #000;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 45px;
+}
+
+.subscribe-btn:hover {
+    background: rgba(255, 215, 0, 1);
+    transform: translateY(-1px);
+}
+
+/* Background Effects */
+.gradient-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 215, 0, 0.3), rgba(0, 0, 0, 0.95));
+    z-index: -1;
+    transition: background 0.3s ease;
+}
+
+.light-mode .gradient-overlay {
+    background: radial-gradient(circle at center, rgba(255, 215, 0, 0.3), rgba(255, 255, 255, 0.95));
+}
+
+.pattern-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1h1v1H1V1zm2 2h1v1H3V3zm2 2h1v1H5V5zm2 2h1v1H7V7z' fill='%23ffffff' fill-opacity='0.05'/%3E%3C/svg%3E");
+    z-index: -2;
+    opacity: 0.4;
+    transition: background-image 0.3s ease;
+}
+
+.light-mode .pattern-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1h1v1H1V1zm2 2h1v1H3V3zm2 2h1v1H5V5zm2 2h1v1H7V7z' fill='%23000000' fill-opacity='0.05'/%3E%3C/svg%3E");
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -3;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .main-logo {
+        font-size: 120px;
+    }
+    
+    .tagline {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+    
+    .navbar-brand {
+        margin-right: 1.5rem;
+    }
+    
+    .nav-link {
+        margin-right: 1rem;
+        font-size: 14px;
+    }
+    
+    .main-logo {
+        font-size: 64px;
+    }
+    
+    .tagline {
+        font-size: 20px;
+    }
+    
+    .coming-soon {
+        font-size: 22px;
+    }
+    
+    .email-container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.8rem;
+    }
+    
+    .main-logo {
+        font-size: 48px;
+    }
+    
+    .tagline {
+        font-size: 18px;
+    }
+    
+    .subscribe-btn {
+        font-size: 12px;
+        padding: 0.6rem 1rem;
+    }
+}
+
+/* Page Transition Styles */
+.page-transition-overlay {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 9999;
+    transition: transform 0.8s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.page-transition-overlay.slide-up {
+    transform: translateY(-100%);
+}
+
+.page-transition-overlay.loaded {
+    transform: translateY(100%);
+}
+
+/* Content Transition */
+.content, .about-content {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+
+
+
+
+
+
+
+
+
+/* Add to style.css */
+html, body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+
+/* Hide WebKit scrollbar */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Ensure content containers handle overflow properly */
+.content, .about-content {
+    width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Maintain responsiveness without scrollbars */
+.about-content {
+    padding: 4rem;
+    max-width: 100vw;
+    box-sizing: border-box;
+}
+
+/* Handle fixed position elements */
+.gradient-overlay,
+.pattern-overlay,
+canvas {
+    width: 100vw;
+    height: 100vh;
+}
